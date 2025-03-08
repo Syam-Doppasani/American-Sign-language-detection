@@ -6,3 +6,10 @@
  Download Link: https://www.kaggle.com/datasets/grassknoted/asl-alphabet
  There are 29 classes of the signs, of which 26 are for the letters A-Z and 3 classes for SPACE,
  DELETE, and NOTHING.
+
+Ensure your project folder structure looks like this:
+flask_app/
+├── asldetection.py
+├── templates/
+│   ├── index.html
+│   └── live.html
