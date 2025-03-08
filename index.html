@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        form {
+            margin-bottom: 1.5rem;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-upload {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .file-upload:hover {
+            background: #0056b3;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .prediction-result {
+            margin-top: 1.5rem;
+        }
+        .prediction-result h2 {
+            color: #333;
+        }
+        .prediction-result img {
+            margin-top: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .live-camera-link {
+            margin-top: 1.5rem;
+            display: inline-block;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .live-camera-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ASL Detection</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for="file-upload" class="file-upload">
+                Choose an Image
+            </label>
+            <input id="file-upload" type="file" name="file" accept="image/*">
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="prediction-result">
+                <h2>Prediction: {{ prediction }}</h2>
+                <img src="{{ image_path }}" alt="Uploaded Image" width="300">
+            </div>
+        {% endif %}
+
+        <a href="/live">Try Live Camera</a>
+    </div>
+
+    <script>
+        // Display the selected
