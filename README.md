@@ -1,15 +1,30 @@
- Objective:-
- Build a system that can detect a given ASL input image and output what the sign represents
- (what letter of the alphabet is the sign).
- 
- Dataset:-
- Download Link: https://www.kaggle.com/datasets/grassknoted/asl-alphabet
- There are 29 classes of the signs, of which 26 are for the letters A-Z and 3 classes for SPACE,
- DELETE, and NOTHING.
+#  American Sign Language (ASL) Detection System
 
-Ensure your project folder structure looks like this:
+## Objective:-
+ Build a system that can detect a given ASL input image and output what the sign represents
+ 
+ 
+**Real-time ASL alphabet recognition using deep learning and Flask web interface**
+
+- Python
+- Flask
+- OpenCV
+- TensorFlow/Keras
+
+##  Features
+- Real-time ASL alphabet detection (A-Z)
+- Webcam integration for live prediction
+- Simple web interface with Flask
+- Responsive design works on desktop/mobile
+- Model confidence visualization
+
+## Dataset:-
+ Download Link: https://www.kaggle.com/datasets/grassknoted/asl-alphabet
+
+##  Project Structure
+```text
 flask_app/
-├── asldetection.py
+├── asldetection.py       # Main Flask app & prediction logic
 ├── templates/
-│   ├── index.html
-│   └── live.html
+│   ├── index.html        # Homepage with instructions
+│   └── live.html         # Live detection interface
