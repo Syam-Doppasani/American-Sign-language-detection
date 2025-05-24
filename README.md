@@ -1,6 +1,6 @@
 #  American Sign Language (ASL) Detection System
 
-## Objective:-
+# Objective:-
  Build a system that can detect a given ASL input image and output what the sign represents
  
  
@@ -11,20 +11,26 @@
 - OpenCV
 - TensorFlow/Keras
 
-##  Features
+#  Features
 - Real-time ASL alphabet detection (A-Z)
 - Webcam integration for live prediction
 - Simple web interface with Flask
 - Responsive design works on desktop/mobile
 - Model confidence visualization
 
-## Dataset:-
+# Dataset:-
  Download Link: https://www.kaggle.com/datasets/grassknoted/asl-alphabet
+ # 👨‍💻 Author
+Syam Doppasani
 
-##  Project Structure
+For freelance work or collaborations: syamdoppasani@gmail.com
+
+# Project Structure
 ```text
 flask_app/
 ├── asldetection.py       # Main Flask app & prediction logic
 ├── templates/
 │   ├── index.html        # Homepage with instructions
 │   └── live.html         # Live detection interface
+
+
